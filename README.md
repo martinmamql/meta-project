@@ -1,19 +1,13 @@
-##### How to run the code
+##### Structure
 
-- Change `PATH_TO_DATASET_DIR` to your own path to datasets. For example, your data is in `/work/siyuanwu/meta/iemocap_arousal.csv`, then your `PATH_TO_DATASET_DIR` will be `/work/siyuanwu/meta/`
+Past best results in folder `best_results/`  
 
-  ```bash
-  python run_main.py \
-  --dataset_name iemocap_arousal \
-  --dataset_dir PATH_TO_DATASET_DIR \
-  --feature_extractor_depth 4 \
-  --projection_output_dim 32 \
-  ... (other arguments)
-  ```
-
-- More arguments could be seen in `config/config.py`.
+To reproduce results, run `bash run_scripts/run.sh`. There are multiple repeated runs due to randomness.
 
 
+##### To-dos
 
+Fix the randomness in the code to be able to reproduce results with the same seed.  
 
+Try to improve the reproduced results to be closer to the best results in the folder.
 

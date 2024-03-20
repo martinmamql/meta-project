@@ -1,4 +1,5 @@
 import os
+import random
 
 import torch
 import numpy as np
@@ -31,6 +32,13 @@ def main(args):
     # set random seed
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
+    random.seed(args.seed)
+
+    torch.cuda.manual_seed(args.seed)
+    torch.cuda.manual_seed_all(args.seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False 
+
     
     # get modules
     feature_extractors, projection_heads, optimizer_feature, optimizer_projection = get_contrastive_modules(args)

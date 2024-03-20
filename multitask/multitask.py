@@ -1,5 +1,6 @@
 import os
 import copy
+import random
 
 import torch
 from torch.utils.data import Dataset
@@ -34,6 +35,12 @@ def multitask(args):
     # set random seed
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
+    random.seed(args.seed)
+
+    torch.cuda.manual_seed(args.seed)
+    torch.cuda.manual_seed_all(args.seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False 
     
     # get modules
     feature_extractors, projection_heads, optimizer_feature, optimizer_projection = get_contrastive_modules(args)

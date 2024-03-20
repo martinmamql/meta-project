@@ -89,9 +89,9 @@ def check_config_exist(args) -> bool:
         for i in range(len(df)):
             entry = list(df.iloc[i][INDEX_COLUMNS])
             entry = [str(info) for info in entry]
-            if entry == args_info:
-                print("This setting already exists!")
-                return True
+            # if entry == args_info:
+            #     print("This setting already exists!")
+            #     return True
     else:
         # create a new csv file
         csv_file = pd.DataFrame(columns=ALL_COLUMNS)
