@@ -1,4 +1,4 @@
-## How to run the code
+## How to run the code for HighAffecT
 
 Past best results by Siyuan are in folder `best_results/`  
 
